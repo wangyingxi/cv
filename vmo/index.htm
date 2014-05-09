@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>VMO</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel='stylesheet' href='css/reset.css' />
+		<link rel='stylesheet' href='css/text.css' />
+		<link rel='stylesheet' href='css/global.css' />
+		<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery-mobile.min.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
+		<style>
+			#container {
+				background: url(img/a.jpg) center center fixed;
+				background-size: cover;
+				height: 100%;
+				width: 100%;
+			}
+			.page {
+				background-attachment: fixed;
+				background-position: center center;
+				background-size: cover;
+				display: none;
+				height: 100%;
+				position: absolute;
+				width: 100%;
+				z-index: 1;
+			}
+			.page.current {
+				display: block;
+				left: 0;
+				top: 0;
+				z-index: 2;
+			}
+			.page.next {
+				box-shadow: 0 0 10px rgba(0,0,0,0.5);
+				display: block;
+				left: 0;
+				top: 100%;
+				z-index: 3;
+			}
+			#page1 {
+				background-image: url(img/a.jpg);
+			}
+			#page2 {
+				background-image: url(img/b.jpg);
+			}
+
+			#page1-ctrl1 {
+				width: 50%;
+			}
+			#page1-ctrl2 {
+				text-align: center;
+				top: 100%;
+				width: 100%;
+				position: fixed;
+			}
+			#page1-ctrl2 span {
+				border-radius: 5px;
+				display: inline-block;
+				margin: 0 3%;
+				margin-bottom: 20px;
+				padding: 10px 0;
+				text-shadow:0 0 5px rgba(0,0,0,0.4);
+				width: 20%;
+			}
+			#page1-ctrl2 div {
+				display: inline-block;
+				width: 74%;
+				text-align:left;
+			}
+			#page1-ctrl2 div p {
+				line-height:28px;
+				margin: 0;
+				padding: 20px;
+				text-shadow:0 0 5px rgba(0,0,0,0.4);
+			}
+		</style>
+		<script type="text/javascript">
+			var DURATION = 300;
+			$('document').ready(function() {
+				$(window).resize(function() {
+					$.xCenter();
+				});
+				$(window).resize();
+				$('#page1-ctrl1').click(function() {
+					var $this = $(this);
+					$this.off('click');
+					$this.animate({
+						width : '40%',
+						left : '30%',
+						top : '100px'
+					}, DURATION, function() {
+						var $this = $(this);
+						var t = $this.offset().top + $this.height() + 40;
+						$('#page1-ctrl2').animate({
+							top : t
+						}, DURATION);
+					});
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="container">
+			<div class="page current" id="page1" next="page2">
+				<img class="xcenter" src='img/vmo-1.png' id="page1-ctrl1" />
+
+				<div id="page1-ctrl2" style="text-align:center">
+					<span class="sbg">高端</span>
+					<span class="sbg">私属</span>
+					<span class="sbg">定制</span>
+					<div class="sbg">
+						<p>
+							会员制商业：私人高端定制<br/>
+							会员制服务类的目的性消费区<br/>
+							花园商务：独门独院企业形象<br/>
+							满足商务接待、办公、居住、度假全高端需求<br/>
+
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="page" id="page2" next="page3" prev="page1">
+
+			</div>
+			<div class="page" id="page3" next="page4" prev="page2">
+
+			</div>
+			<div class="page" id="page4" next="page5" prev="page3">
+
+			</div>
+			<div class="page" id="page5" next="page6" prev="page4">
+
+			</div>
+			<div class="page" id="page6" next="page7" prev="page5">
+
+			</div>
+			<div class="page" id="page7" next="page8" prev="page6">
+
+			</div>
+		</div>
+	</body>
+</html>
