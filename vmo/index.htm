@@ -4,7 +4,7 @@
 		<title>VMO</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="viewport" content="width=device-width,initial-scale=0.5,minimum-scale=0.5,maximum-scale=0.5,user-scalable=no" />
 		<link rel='stylesheet' href='css/reset.css' />
 		<link rel='stylesheet' href='css/text.css' />
 		<link rel='stylesheet' href='css/global.css' />
@@ -49,8 +49,7 @@
 			}
 
 			#page1-ctrl1 {
-				height:350px;
-				width:350px;
+				width: 50%;
 			}
 			#page1-ctrl2 {
 				text-align: center;
@@ -89,8 +88,7 @@
 					var $this = $(this);
 					$this.off('click');
 					$this.animate({
-						width : '200px',
-						height : '200px',
+						width : '40%',
 						left : '30%',
 						top : '70px'
 					}, DURATION, function() {
@@ -109,7 +107,7 @@
 	<body>
 		<div id="container">
 			<div class="page current" id="page1" next="page2">
-				<img class="xcenter" src='img/vmo-1.png' id="page1-ctrl1" />
+				<img class="xcenter" src='img/vmo-1.png' shape="square" id="page1-ctrl1" />
 
 				<div id="page1-ctrl2" style="text-align:center">
 					<span class="sbg">高端</span>
