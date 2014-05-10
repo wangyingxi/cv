@@ -5,7 +5,7 @@
 		var arr = $(selector);
 		$.each(arr, function() {
 			var $this = $(this);
-			var parent = $this.parent();
+			var parent = $(window);
 			var pw = parent.width();
 			var ph = parent.height();
 			if ($this.css('position') != 'absolute' || $this.css('position') != 'fixed') {
