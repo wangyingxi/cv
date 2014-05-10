@@ -84,7 +84,6 @@
 				$(window).resize(function() {
 					$.xCenter();
 				});
-				$(window).resize();
 				$('#page1-ctrl1').click(function() {
 					var $this = $(this);
 					$this.off('click');
@@ -100,6 +99,7 @@
 						}, DURATION);
 					});
 				});
+				$(window).resize();
 			});
 		</script>
 	</head>
