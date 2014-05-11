@@ -42,23 +42,43 @@ var DURATION = 300;
 			$('.page').removeClass('current');
 			$(this).addClass('current');
 			$('#page1-ctrl1').xCenter();
-			$('#page1-ctrl1').off('click');
-			$('#page1-ctrl1').on('click', function() {
-				var $this = $(this);
-				$this.off('click');
-				$this.animate({
-					width : '30%',
-					left : '35%',
-					top : '50px'
-				}, DURATION, function() {
+			// $('#page1-ctrl1').off('click');
+			// $('#page1-ctrl1').on('click', function() {
+			// var $this = $(this);
+			// $this.off('click');
+			// $this.animate({
+			// width : '30%',
+			// left : '35%',
+			// top : '50px'
+			// }, DURATION, function() {
+			// var $this = $(this);
+			// var t = $this.offset().top + $this.height() + 20;
+			// $('#page1-ctrl2').animate({
+			// top : t
+			// }, DURATION, function() {
+			// $(this).siblings('.downarr').fadeIn();
+			// });
+			// });
+			// });
+
+			$('#page1-ctrl1').swipe({
+				tap : function() {
 					var $this = $(this);
-					var t = $this.offset().top + $this.height() + 20;
-					$('#page1-ctrl2').animate({
-						top : t
+					$this.off('click');
+					$this.animate({
+						width : '30%',
+						left : '35%',
+						top : '50px'
 					}, DURATION, function() {
-						$(this).siblings('.downarr').fadeIn();
+						var $this = $(this);
+						var t = $this.offset().top + $this.height() + 20;
+						$('#page1-ctrl2').animate({
+							top : t
+						}, DURATION, function() {
+							$(this).siblings('.downarr').fadeIn();
+						});
 					});
-				});
+				}
 			});
 		});
 
