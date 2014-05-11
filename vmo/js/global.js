@@ -23,8 +23,10 @@ var DURATION = 300;
 				swipeUp : function() {
 					// alert($this.attr('next'));
 					var currentOne = $this.closest('.page');
-					var nextOne = $('#' + currentOne.attr('next'));
-					$.turn(nextOne, currentOne);
+					if (currentOne.attr('next')) {
+						var nextOne = $('#' + currentOne.attr('next'));
+						$.turn(nextOne, currentOne);
+					}
 				},
 				swipeDown : function() {
 					// alert($this.attr('prev'));
@@ -85,6 +87,36 @@ var DURATION = 300;
 				}
 			});
 			$(this).find('.downarr').fadeIn();
+		});
+
+		$('#page3').bind('launch', function() {
+			var tbmlBtn = $(this).find('.tbml');
+			var triggerTap = function(obj) {
+				obj.siblings('.selected').removeClass('selected');
+				obj.addClass('selected');
+
+				var rel = obj.attr('rel');
+				rel = $('#' + rel);
+				rel.siblings('.content').hide();
+				rel.show();
+
+				rel.find('.ctr').swipe({
+					tap : function() {
+						var $this = $(this);
+						$this.hide();
+						$this.siblings('.contx').show();
+					}
+				});
+			}
+			tbmlBtn.swipe({
+				tap : function() {
+					var $this = $(this);
+					if ($this.hasClass('selected'))
+						return;
+					triggerTap($this);
+				}
+			});
+			triggerTap($(tbmlBtn.get(0)));
 		});
 	}
 

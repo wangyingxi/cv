@@ -49,7 +49,9 @@
 			#page2 {
 				background-image: url(img/4-bg.jpg);
 			}
-
+			#page3 {
+				background-image: url(img/5-1.jpg);
+			}
 			#page1-ctrl1 {
 				position: absolute;
 				width: 50%;
@@ -102,7 +104,7 @@
 				width: 58px;
 			}
 			#page2-ctrl2 .pg2sbt img {
-				border-radius:1000px;
+				border-radius: 1000px;
 				height: 100%;
 				width: 100%;
 			}
@@ -117,7 +119,7 @@
 				z-index: 2;
 			}
 			#page2-ctrl2 .pg2sbt.selected .cr {
-				border-radius:1000px;
+				border-radius: 1000px;
 				background-color: transparent;
 			}
 			#page2-ctrl3 {
@@ -141,6 +143,68 @@
 				font-weight: bold;
 				padding-top: 20px;
 				text-align: center;
+			}
+
+			#page3-ctrl1 {
+				background: rgba(0,0,0,0.6);
+				bottom: 0;
+				height: 60px;
+				left: 0;
+				position: absolute;
+				width: 100%;
+			}
+			#page3-ctrl1 .tbml {
+				display: inline-block;
+				float: left;
+				height: 100%;
+				line-height: 60px;
+				text-align: center;
+				text-shadow: 0 0 5px rgba(0,0,0,0.5);
+				vertical-align: middle;
+				width: 14%;
+				z-index: 2
+			}
+			#page3 .content {
+				display: none;
+				height: 100%;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				z-index: 0;
+			}
+			#page3 .content .ctr, #page3 .content .contx {
+				background: rgba(0,0,0,0.6);
+				border-radius: 500px;
+				font-size: 20px;
+				height: 150px;
+				left: 50%;
+				line-height: 150px;
+				margin-left: -75px;
+				margin-top: -75px;
+				text-align: center;
+				top: 50%;
+				position: absolute;
+				width: 150px;
+			}
+			#page3 .content .contx {
+				border-radius: 5px;
+				display: none;
+				height: auto;
+				font-size: 15px;
+				margin-left: -150px;
+				padding: 10px 0;
+				width: 300px;
+			}
+			#page3 .content .contx .wp {
+				line-height: 24px;
+				padding: 20px 0;
+			}
+			#page3-ctrl1 .tbml:last-child {
+				width: 16%;
+			}
+			#page3-ctrl1 .tbml.selected {
+				background: rgba(255,255,255,0.5);
 			}
 		</style>
 		<script type="text/javascript">
@@ -241,8 +305,146 @@
 					</div>
 				</div>
 			</div>
-			<div class="page" id="page3" next="page4" prev="page2">
-
+			<div class="page" id="page3" prev="page2">
+				<div class="content" id="x1">
+					<div class="ctr xce">
+						VMO定制
+					</div>
+					<div class="contx">
+						<div class="wp">
+							VMO 定制
+							<br/>
+							460-3072
+							<br/>
+							自由组合别墅空间
+							<br/>
+							满足商业商务
+							<br/>
+							定制设计
+						</div>
+					</div>
+				</div>
+				<div class="content" id="x2">
+					<div class="ctr">
+						VMO私属
+					</div>
+					<div class="contx">
+						<div class="wp">
+							VMO 私属
+							<br/>
+							7.2米大开间、
+							<br/>
+							独门独户布局，
+							<br/>
+							满足高端私密的要求
+						</div>
+					</div>
+				</div>
+				<div class="content" id="x3">
+					<div class="ctr">
+						VMO高度
+					</div>
+					<div class="contx">
+						<div class="wp">
+							VMO 高度
+							<br/>
+							4.5米豪华挑高，
+							<br/>
+							比甲A级写字楼标准
+							<br/>
+							高出近一倍
+						</div>
+					</div>
+				</div>
+				<div class="content" id="x4">
+					<div class="ctr">
+						VMO视界
+					</div>
+					<div class="contx">
+						<div class="wp">
+							VMO 视界
+							<br/>
+							270度大景观
+							<br/>
+							落地玻窗，
+							<br/>
+							私家花园赠送，
+							<br/>
+							完美私属享受
+						</div>
+					</div>
+				</div>
+				<div class="content" id="x5">
+					<div class="ctr">
+						VMO智能
+					</div>
+					<div class="contx">
+						<div class="wp">
+							VMO 智能
+							<br/>
+							100M私家光纤到户，
+							<br/>
+							WIFI全覆盖，
+							<br/>
+							全智能化商务管理
+						</div>
+					</div>
+				</div>
+				<div class="content" id="x6">
+					<div class="ctr">
+						VMO物管
+					</div>
+					<div class="contx">
+						<div class="wp">
+							VMO 物管
+							<br/>
+							尊崇的运营管理，来自万科KING服务
+							<br/>
+							悉心考量商务、生活、安全三大服务类型，
+							<br/>
+							深度定制智能化服务、智能化安防体系，
+							<br/>
+							提供全球首席地产商、TOP系尊崇服务
+						</div>
+					</div>
+				</div>
+				<div class="content" id="x7">
+					<div class="ctr">
+						VMO业态
+					</div>
+					<div class="contx">
+						<div class="wp">
+							VMO 业态
+							<br/>
+							会员制商业规划
+							<br/>
+							花园商务规划业态
+						</div>
+					</div>
+				</div>
+				<div id="page3-ctrl1">
+					<div class="tbml" rel="x1">
+						定制
+					</div>
+					<div class="tbml" rel="x2">
+						私属
+					</div>
+					<div class="tbml" rel="x3">
+						高度
+					</div>
+					<div class="tbml"  rel="x4">
+						视界
+					</div>
+					<div class="tbml"  rel="x5">
+						智能
+					</div>
+					<div class="tbml"  rel="x6">
+						物管
+					</div>
+					<div class="tbml"  rel="x7">
+						业态
+					</div>
+				</div>
 			</div>
 			<div class="page" id="page4" next="page5" prev="page3">
 
