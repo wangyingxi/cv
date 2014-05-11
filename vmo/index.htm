@@ -127,7 +127,7 @@
 				left: 20px;
 				position: absolute;
 				top: 68%;
-				z-index:5;
+				z-index: 5;
 			}
 			#page2-ctrl4 .l1, #page2-ctrl4 .l2 {
 				text-shadow: 0 0 10px rgba(0,0,0,0.6);
@@ -135,10 +135,10 @@
 				margin: 0 0 10px 0;
 			}
 			#page2 .tt {
-				font-size:20px;
-				font-weight:bold;
-				padding-top:20px;
-				text-align:center;
+				font-size: 20px;
+				font-weight: bold;
+				padding-top: 20px;
+				text-align: center;
 			}
 		</style>
 		<script type="text/javascript">
@@ -150,10 +150,12 @@
 				$(window).resize();
 				$.bindLaunch();
 
-				$('.downarr').click(function() {
-					var currentOne = $(this).closest('.page');
-					var nextOne = $('#' + currentOne.attr('next'));
-					$.turn(nextOne, currentOne);
+				$('.downarr').swipe({
+					tap : function() {
+						var currentOne = $(this).closest('.page');
+						var nextOne = $('#' + currentOne.attr('next'));
+						$.turn(nextOne, currentOne);
+					}
 				});
 				// $('#page1').trigger('launch');
 				$.turn($('#page1'), null);
@@ -187,11 +189,17 @@
 				</div>
 			</div>
 			<div class="page" id="page2" next="page3" prev="page1">
-				<p class="tt">How's VMO</p>
+				<p class="tt">
+					How's VMO
+				</p>
 				<div class="downarr"></div>
 				<div id="page2-ctrl4">
-					<p class="l1">72平方公里</p>
-					<p class="l2">国家级五星生态园区</p>
+					<p class="l1">
+						72平方公里
+					</p>
+					<p class="l2">
+						国家级五星生态园区
+					</p>
 				</div>
 				<div id="page2-ctrl1">
 					<img id="page2-ctrl3" src="img/4-1.jpg"/>
