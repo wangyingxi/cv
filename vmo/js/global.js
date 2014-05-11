@@ -64,7 +64,7 @@ var DURATION = 300;
 
 		$('#page2').bind('launch', function() {
 			$('.pg2sbt').off('click');
-			$('.pg2sbt').click(function() {
+			$('.pg2sbt .cr').click(function() {
 				var $this = $(this).closest('.pg2sbt');
 				$this.siblings('.selected').removeClass('selected');
 				$this.addClass('selected');
