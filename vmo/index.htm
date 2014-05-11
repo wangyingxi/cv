@@ -8,22 +8,25 @@
 		<link rel='stylesheet' href='css/text.css' />
 		<link rel='stylesheet' href='css/global.css' />
 		<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-		<script type="text/javascript" src="js/jquery-mobile.min.js"></script>
+		<!-- <script type="text/javascript" src="js/jquery-mobile.min.js"></script> -->
+		<script type="text/javascript" src="js/jquery.touchswipe.min.js"></script>
 		<script type="text/javascript" src="js/global.js"></script>
 		<style>
 			#container {
-				background: url(img/a.jpg) center center fixed;
+				background: #333;
 				background-size: cover;
 				height: 100%;
 				width: 100%;
 			}
 			.page {
-				background-attachment: fixed;
+				background-attachment: absolute;
 				background-position: center center;
 				background-size: cover;
 				display: none;
 				height: 100%;
+				left: 0;
 				position: fixed;
+				top: 100%;
 				width: 100%;
 				z-index: 1;
 			}
@@ -48,13 +51,15 @@
 			}
 
 			#page1-ctrl1 {
+				position:absolute;
 				width: 50%;
+				
 			}
 			#page1-ctrl2 {
 				text-align: center;
 				top: 100%;
 				width: 100%;
-				position: fixed;
+				position: absolute;
 			}
 			#page1-ctrl2 span {
 				border-radius: 5px;
@@ -62,52 +67,49 @@
 				margin: 0 3%;
 				margin-bottom: 15px;
 				padding: 5px 0;
-				text-shadow:0 0 5px rgba(0,0,0,0.4);
+				text-shadow: 0 0 5px rgba(0,0,0,0.4);
 				width: 20%;
 			}
 			#page1-ctrl2 div {
 				border-radius: 5px;
 				display: inline-block;
 				width: 74%;
-				text-align:left;
+				text-align: left;
 			}
 			#page1-ctrl2 div p {
-				line-height:24px;
+				line-height: 24px;
 				margin: 0;
 				padding: 15px;
-				text-shadow:0 0 5px rgba(0,0,0,0.4);
+				text-shadow: 0 0 5px rgba(0,0,0,0.4);
 			}
 		</style>
 		<script type="text/javascript">
-			var DURATION = 300;
 			$('document').ready(function() {
 				$(window).resize(function() {
-					$.xCenter();
-				});
-				$('#page1-ctrl1').click(function() {
-					var $this = $(this);
-					$this.off('click');
-					$this.animate({
-						width : '30%',
-						left : '35%',
-						top : '50px'
-					}, DURATION, function() {
-						var $this = $(this);
-						var t = $this.offset().top + $this.height() + 20;
-						$('#page1-ctrl2').animate({
-							top : t
-						}, DURATION);
-					});
+					$('.page').width($(window).width());
+					$('.page').height($(window).height());
 				});
 				$(window).resize();
+				$.bindLaunch();
+
+				$('.downarr').click(function() {
+					var currentOne = $(this).closest('.page');
+					var nextOne = $('#' + currentOne.attr('next'));
+					$.turn(nextOne, currentOne);
+				});
+				$('#page1').trigger('launch');
+				$.turn($('#page1'), null);
+				
+				$('.page').slidePage();
 			});
 		</script>
 	</head>
 
 	<body>
 		<div id="container">
-			<div class="page current" id="page1" next="page2">
-				<img class="xcenter" src='img/vmo-1.png' shape="square" id="page1-ctrl1" />
+			<div class="page" id="page1" next="page2">
+				<div class="downarr"></div>
+				<img src='img/vmo-1.png' shape="square" id="page1-ctrl1" />
 
 				<div id="page1-ctrl2" style="text-align:center">
 					<span class="sbg">高端</span>
@@ -115,11 +117,14 @@
 					<span class="sbg">定制</span>
 					<div class="sbg">
 						<p>
-							会员制商业：私人高端定制<br/>
-							会员制服务类的目的性消费区<br/>
-							花园商务：独门独院企业形象<br/>
-							满足商务接待、办公、居住、度假全高端需求<br/>
-
+							会员制商业：私人高端定制
+							<br/>
+							会员制服务类的目的性消费区
+							<br/>
+							花园商务：独门独院企业形象
+							<br/>
+							满足商务接待、办公、居住、度假全高端需求
+							<br/>
 						</p>
 					</div>
 				</div>

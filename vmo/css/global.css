@@ -272,3 +272,13 @@ body {
 	background: rgba(0,0,0,0.6);
 }
 
+.downarr {
+	background:url(../img/down.png) center center no-repeat;
+	bottom:10px;
+	display:none;
+	height:50px;
+	position:fixed;
+	right:10px;
+	width:50px;
+	z-index:11;
+}
