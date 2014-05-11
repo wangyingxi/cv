@@ -47,13 +47,12 @@
 				background-image: url(img/a.jpg);
 			}
 			#page2 {
-				background-image: url(img/b.jpg);
+				background-image: url(img/4-bg.jpg);
 			}
 
 			#page1-ctrl1 {
-				position:absolute;
+				position: absolute;
 				width: 50%;
-				
 			}
 			#page1-ctrl2 {
 				text-align: center;
@@ -82,6 +81,32 @@
 				padding: 15px;
 				text-shadow: 0 0 5px rgba(0,0,0,0.4);
 			}
+			#page2-ctrl1 {
+				padding: 40px 50px;
+			}
+			#page2-ctrl2 {
+				bottom: 0;
+				display:block;
+				left: 0;
+				position: absolute;
+				text-align: center;
+				top: auto;
+				width:100%;
+			}
+			#page2-ctrl2 img {
+				border-radius:1000px;
+				display:inline-block;
+				height:50px;
+				margin:0 5px;
+				margin-bottom:20px;
+				overflow:hidden;
+				width:50px;
+			}
+			#page2-ctrl3 {
+				border-radius: 1000px;
+				width: 100%;
+			}
+
 		</style>
 		<script type="text/javascript">
 			$('document').ready(function() {
@@ -99,7 +124,7 @@
 				});
 				$('#page1').trigger('launch');
 				$.turn($('#page1'), null);
-				
+
 				$('.page').slidePage();
 			});
 		</script>
@@ -110,8 +135,7 @@
 			<div class="page" id="page1" next="page2">
 				<div class="downarr"></div>
 				<img src='img/vmo-1.png' shape="square" id="page1-ctrl1" />
-
-				<div id="page1-ctrl2" style="text-align:center">
+				<div id="page1-ctrl2">
 					<span class="sbg">高端</span>
 					<span class="sbg">私属</span>
 					<span class="sbg">定制</span>
@@ -130,7 +154,17 @@
 				</div>
 			</div>
 			<div class="page" id="page2" next="page3" prev="page1">
-
+				<div class="downarr"></div>
+				<div id="page2-ctrl1">
+					<img id="page2-ctrl3" src="img/4-1.jpg"/>
+				</div>
+				<div id="page2-ctrl2">
+					<img src="img/4-1.jpg"/>
+					<img src="img/4-2.jpg" style="margin-top:-15px;"/>
+					<img src="img/4-3.jpg" style="margin-top:-40px;"/>
+					<img src="img/4-4.jpg" style="margin-top:-90px;"/>
+					<img src="img/4-5.jpg" style="margin-top:-150px;"/>
+				</div>
 			</div>
 			<div class="page" id="page3" next="page4" prev="page2">
 
