@@ -63,7 +63,7 @@ var DURATION = 300;
 		});
 
 		$('#page2').bind('launch', function() {
-
+			
 		});
 	}
 
